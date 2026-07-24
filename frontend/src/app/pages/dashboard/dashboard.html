@@ -1,1 +1,130 @@
-<p>dashboard works!</p>
+<div class="dashboard-layout">
+  <!-- Top Navigation Bar -->
+  <nav class="dash-navbar">
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">VeriTruth AI</span>
+    </div>
+    <div class="nav-actions">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/history" class="nav-item">History</a>
+      <a routerLink="/profile" class="nav-item">Profile</a>
+      <button class="btn-logout" routerLink="/login">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dash-content">
+    <!-- Welcome Header -->
+    <header class="welcome-card">
+      <div class="welcome-text">
+        <h1>Welcome back, Divya 👋</h1>
+        <p>Ready to verify today's news? Choose a tool below to analyze content with AI.</p>
+      </div>
+    </header>
+
+    <!-- Quick Statistics -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <span class="stat-label">Total Scans</span>
+        <span class="stat-value">15</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Fake News Detected</span>
+        <span class="stat-value fake">5</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Real News Verified</span>
+        <span class="stat-value real">10</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">Average Accuracy</span>
+        <span class="stat-value">96%</span>
+      </div>
+    </section>
+
+    <!-- Choose Detection Type -->
+    <section class="section-container">
+      <h2>Choose Detection Type</h2>
+      <div class="detection-grid">
+        <div class="detection-card">
+          <div class="card-icon">📰</div>
+          <h3>Text Detection</h3>
+          <p>Analyze text articles, headlines, or paragraphs.</p>
+          <button class="btn-open" routerLink="/text-detection">Open Tool</button>
+        </div>
+
+        <div class="detection-card">
+          <div class="card-icon">🖼️</div>
+          <h3>Image Detection</h3>
+          <p>Verify uploaded photos for deepfakes or edits.</p>
+          <button class="btn-open" routerLink="/image-detection">Open Tool</button>
+        </div>
+
+        <div class="detection-card">
+          <div class="card-icon">🎥</div>
+          <h3>Video Detection</h3>
+          <p>Scan video frames for face swaps and edits.</p>
+          <button class="btn-open" routerLink="/video-detection">Open Tool</button>
+        </div>
+
+        <div class="detection-card">
+          <div class="card-icon">🎙️</div>
+          <h3>Audio Detection</h3>
+          <p>Detect voice cloning and synthetic speech.</p>
+          <button class="btn-open" routerLink="/audio-detection">Open Tool</button>
+        </div>
+
+        <div class="detection-card">
+          <div class="card-icon">🔗</div>
+          <h3>URL Detection</h3>
+          <p>Verify web links and domain credibility.</p>
+          <button class="btn-open" routerLink="/url-detection">Open Tool</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity Table -->
+    <section class="section-container">
+      <div class="table-header">
+        <h2>Recent Activity</h2>
+        <a routerLink="/history" class="view-all">View All History →</a>
+      </div>
+      <div class="table-wrapper">
+        <table class="activity-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Type</th>
+              <th>Result</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>21 Jul 2026</td>
+              <td>Text</td>
+              <td><span class="badge badge-fake">Fake</span></td>
+              <td><a routerLink="/history" class="details-link">Details</a></td>
+            </tr>
+            <tr>
+              <td>21 Jul 2026</td>
+              <td>URL</td>
+              <td><span class="badge badge-real">Real</span></td>
+              <td><a routerLink="/history" class="details-link">Details</a></td>
+            </tr>
+            <tr>
+              <td>20 Jul 2026</td>
+              <td>Image</td>
+              <td><span class="badge badge-fake">Fake</span></td>
+              <td><a routerLink="/history" class="details-link">Details</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 VeriTruth AI. All rights reserved.</p>
+  </footer>
+</div>
