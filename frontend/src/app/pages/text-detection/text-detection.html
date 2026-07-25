@@ -1,44 +1,54 @@
-<div class="detection-container">
-  <!-- Top Nav Link -->
-  <div class="top-bar">
-    <a routerLink="/dashboard" class="back-link">← Back to Dashboard</a>
-  </div>
-
-  <div class="detection-card">
-    <div class="header">
-      <h2>📰 Text Detection Tool</h2>
-      <p>Paste an article headline, news body, or paragraph to verify authenticity using NLP AI models.</p>
+<div class="detection-layout">
+  <!-- Top Navigation Bar -->
+  <nav class="dash-navbar">
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">VeriTruth AI</span>
     </div>
-
-    <!-- Input Form -->
-    <div class="form-group">
-      <label for="newsText">News Article Content</label>
-      <textarea 
-        id="newsText" 
-        rows="6" 
-        placeholder="Paste news content here..."
-      ></textarea>
+    <div class="nav-actions">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/dashboard" class="nav-item">Dashboard</a>
+      <a routerLink="/history" class="nav-item">History</a>
+      <a routerLink="/profile" class="nav-item">Profile</a>
+      <button class="btn-logout" routerLink="/login">Logout</button>
     </div>
+  </nav>
 
-    <button class="btn btn-primary btn-block">Analyze Article</button>
+  <div class="dash-content">
+    <header class="page-header">
+      <h2>📝 Text Fake News Detection</h2>
+      <p>Paste news headlines, body paragraphs, or full articles below to check credibility with AI.</p>
+    </header>
 
-    <!-- Simulated Output Result Card (For UI Testing) -->
-    <div class="result-box result-fake">
-      <div class="result-header">
-        <span class="status-badge badge-fake">🔴 FAKE NEWS DETECTED</span>
-        <span class="score">94.5% Confidence Score</span>
-      </div>
-      
-      <div class="progress-bar">
-        <div class="progress-fill fake-fill" style="width: 94.5%;"></div>
+    <div class="detection-card">
+      <div class="input-group">
+        <label for="newsText">Enter News Text</label>
+        <textarea id="newsText" rows="6" placeholder="Paste the news content or article text here..."></textarea>
       </div>
 
-      <div class="explanation">
-        <h4>Key Findings & Analysis</h4>
-        <ul>
-          <li>Linguistic analysis identified clickbait-style exaggeration and emotional manipulation.</li>
-          <li>Source text patterns match low-credibility flags from historical news datasets.</li>
-        </ul>
+      <button class="btn btn-primary btn-block">Analyze Text</button>
+
+      <div class="result-box result-fake">
+        <div class="result-header">
+          <div class="badge-group">
+            <span class="badge badge-fake">🔴 FAKE NEWS</span>
+            <span class="confidence">94% Confidence</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill fake-fill" style="width: 94%;"></div>
+        </div>
+
+        <div class="reason-section">
+          <h4>Reason / Key Analysis</h4>
+          <p>Sensationalized headline with unverified claims and mismatched source references detected.</p>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-outline">Analyze Another</button>
+          <a routerLink="/dashboard" class="btn btn-secondary">Go to Dashboard</a>
+        </div>
       </div>
     </div>
   </div>

@@ -1,1 +1,64 @@
-<p>image-detection works!</p>
+<div class="detection-layout">
+  <!-- Top Navigation Bar -->
+  <nav class="dash-navbar">
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">VeriTruth AI</span>
+    </div>
+    <div class="nav-actions">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/dashboard" class="nav-item">Dashboard</a>
+      <a routerLink="/history" class="nav-item">History</a>
+      <a routerLink="/profile" class="nav-item">Profile</a>
+      <button class="btn-logout" routerLink="/login">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dash-content">
+    <header class="page-header">
+      <h2>🖼️ Image Fake News Detection</h2>
+      <p>Upload an image containing news, photos, or infograms to verify its authenticity with AI.</p>
+    </header>
+
+    <div class="detection-card">
+      <div class="upload-zone">
+        <div class="upload-icon">📁</div>
+        <h3>Choose Image or Drag & Drop</h3>
+        <p class="file-types">Supports PNG, JPG, JPEG</p>
+        <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg" class="file-input" />
+        <label for="imageInput" class="btn btn-outline">Upload Image</label>
+      </div>
+
+      <div class="preview-container">
+        <div class="preview-placeholder">
+          <span>📸 Image Preview Area</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block btn-analyze">Analyze Image</button>
+
+      <div class="result-box result-fake">
+        <div class="result-header">
+          <div class="badge-group">
+            <span class="badge badge-fake">🔴 FAKE NEWS</span>
+            <span class="confidence">96% Confidence</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill fake-fill" style="width: 96%;"></div>
+        </div>
+
+        <div class="reason-section">
+          <h4>Reason / Key Analysis</h4>
+          <p>Manipulated image detected. Signs of digital editing and metadata inconsistencies were flagged across pixel boundaries.</p>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-outline">Analyze Another</button>
+          <a routerLink="/dashboard" class="btn btn-secondary">Go to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,69 @@
-<p>video-detection works!</p>
+<div class="detection-layout">
+  <!-- Top Navigation Bar -->
+  <nav class="dash-navbar">
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">VeriTruth AI</span>
+    </div>
+    <div class="nav-actions">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/dashboard" class="nav-item">Dashboard</a>
+      <a routerLink="/history" class="nav-item">History</a>
+      <a routerLink="/profile" class="nav-item">Profile</a>
+      <button class="btn-logout" routerLink="/login">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dash-content">
+    <!-- Heading -->
+    <header class="page-header">
+      <h2>🎥 Video Detection</h2>
+      <p>Upload a video to verify whether it contains fake or manipulated news (deepfake detection).</p>
+    </header>
+
+    <div class="detection-card">
+      <!-- Upload Area -->
+      <div class="upload-zone">
+        <div class="upload-icon">📹</div>
+        <h3>Choose Video or Drag & Drop</h3>
+        <p class="file-types">Supported formats: MP4, AVI, MOV</p>
+        <input type="file" id="videoInput" accept="video/mp4, video/avi, video/quicktime" class="file-input" />
+        <label for="videoInput" class="btn btn-outline">Choose Video</label>
+      </div>
+
+      <!-- Video Preview Area -->
+      <div class="preview-container">
+        <div class="preview-placeholder">
+          <span>🎬 Video Preview Area</span>
+        </div>
+      </div>
+
+      <!-- Analyze Button -->
+      <button class="btn btn-primary btn-block btn-analyze">Analyze Video</button>
+
+      <!-- Result Card -->
+      <div class="result-box result-fake">
+        <div class="result-header">
+          <div class="badge-group">
+            <span class="badge badge-fake">🔴 FAKE VIDEO</span>
+            <span class="confidence">Confidence: 96%</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill fake-fill" style="width: 96%;"></div>
+        </div>
+
+        <div class="reason-section">
+          <h4>Reason / Analysis</h4>
+          <p>Deepfake face detected. Facial frame inconsistency and synthetic lip-sync alignment flagged.</p>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-outline">Analyze Another</button>
+          <a routerLink="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

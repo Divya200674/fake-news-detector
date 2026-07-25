@@ -1,0 +1,268 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #0f172a;
+}
+
+.detection-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.dash-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #475569;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #2563eb;
+}
+
+.btn-logout {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  padding: 0.4rem 1rem;
+  border-radius: 0.375rem;
+  color: #ef4444;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: #fef2f2;
+}
+
+/* Content Area */
+.dash-content {
+  max-width: 800px;
+  width: 90%;
+  margin: 2rem auto;
+  flex: 1;
+}
+
+.page-header {
+  margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+  font-size: 1.75rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.page-header p {
+  color: #64748b;
+  margin: 0;
+}
+
+.detection-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Upload Section */
+.upload-zone {
+  border: 2px dashed #cbd5e1;
+  border-radius: 0.5rem;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.upload-zone:hover {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+}
+
+.upload-zone h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.file-types {
+  color: #64748b;
+  font-size: 0.85rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.file-input {
+  display: none;
+}
+
+/* Preview Placeholder */
+.preview-container {
+  width: 100%;
+}
+
+.preview-placeholder {
+  width: 100%;
+  height: 240px;
+  border-radius: 0.5rem;
+  background-color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-outline {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+}
+
+.btn-outline:hover {
+  background-color: #f8fafc;
+}
+
+.btn-secondary {
+  background-color: #f1f5f9;
+  color: #334155;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* Result Box */
+.result-box {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge {
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 1rem;
+}
+
+.badge-fake {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.confidence {
+  font-weight: 600;
+  color: #991b1b;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #fee2e2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill.fake-fill {
+  height: 100%;
+  background: #dc2626;
+}
+
+.reason-section h4 {
+  margin: 0 0 0.25rem 0;
+  color: #991b1b;
+  font-size: 0.95rem;
+}
+
+.reason-section p {
+  margin: 0;
+  color: #7f1d1d;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}

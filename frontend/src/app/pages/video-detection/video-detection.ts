@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-video-detection',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './video-detection.html',
-  styleUrl: './video-detection.css',
+  styleUrl: './video-detection.css'
 })
 export class VideoDetection {}

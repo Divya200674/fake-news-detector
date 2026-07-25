@@ -26,19 +26,19 @@
     <section class="stats-grid">
       <div class="stat-card">
         <span class="stat-label">Total Scans</span>
-        <span class="stat-value">15</span>
+        <span class="stat-value">120</span>
       </div>
       <div class="stat-card">
-        <span class="stat-label">Fake News Detected</span>
-        <span class="stat-value fake">5</span>
+        <span class="stat-label">Fake News Found</span>
+        <span class="stat-value fake">32</span>
       </div>
       <div class="stat-card">
         <span class="stat-label">Real News Verified</span>
-        <span class="stat-value real">10</span>
+        <span class="stat-value real">88</span>
       </div>
       <div class="stat-card">
-        <span class="stat-label">Average Accuracy</span>
-        <span class="stat-value">96%</span>
+        <span class="stat-label">Model Accuracy</span>
+        <span class="stat-value">97.5%</span>
       </div>
     </section>
 
@@ -101,21 +101,21 @@
           </thead>
           <tbody>
             <tr>
-              <td>21 Jul 2026</td>
-              <td>Text</td>
-              <td><span class="badge badge-fake">Fake</span></td>
-              <td><a routerLink="/history" class="details-link">Details</a></td>
-            </tr>
-            <tr>
-              <td>21 Jul 2026</td>
+              <td>2 min ago</td>
               <td>URL</td>
-              <td><span class="badge badge-real">Real</span></td>
+              <td><span class="badge badge-real">Real (99%)</span></td>
               <td><a routerLink="/history" class="details-link">Details</a></td>
             </tr>
             <tr>
-              <td>20 Jul 2026</td>
+              <td>5 min ago</td>
+              <td>Text</td>
+              <td><span class="badge badge-fake">Fake (94%)</span></td>
+              <td><a routerLink="/history" class="details-link">Details</a></td>
+            </tr>
+            <tr>
+              <td>Yesterday</td>
               <td>Image</td>
-              <td><span class="badge badge-fake">Fake</span></td>
+              <td><span class="badge badge-real">Real (96%)</span></td>
               <td><a routerLink="/history" class="details-link">Details</a></td>
             </tr>
           </tbody>
@@ -123,8 +123,4 @@
       </div>
     </section>
   </div>
-
-  <footer class="footer">
-    <p>© 2026 VeriTruth AI. All rights reserved.</p>
-  </footer>
 </div>

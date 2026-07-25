@@ -5,13 +5,13 @@
     <span class="logo-text">VeriTruth AI</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#" class="active">Home</a></li>
+    <li><a routerLink="/" class="active">Home</a></li>
     <li><a href="#features">Features</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <div class="auth-buttons">
     <button class="btn btn-outline" routerLink="/login">Login</button>
-    <button class="btn btn-primary" routerLink="/register">Get Started</button>
+    <button class="btn btn-primary" routerLink="/register">Sign Up</button>
   </div>
 </nav>
 
@@ -25,7 +25,7 @@
       or article URLs to analyze credibility in real-time.
     </p>
     <div class="hero-cta">
-      <button class="btn btn-primary btn-large" routerLink="/register">Start Detecting Now</button>
+      <button class="btn btn-primary btn-large" routerLink="/dashboard">Start Detecting Now</button>
       <a href="#features" class="btn btn-secondary btn-large">Explore Features</a>
     </div>
   </div>
@@ -39,34 +39,58 @@
   </div>
 
   <div class="cards-grid">
-    <div class="card">
+    <div class="card highlight-card">
       <div class="card-icon">📰</div>
       <h3>Text Detection</h3>
       <p>Analyze news headlines, body paragraphs, and articles using NLP models.</p>
+      <button class="btn-gradient-text" routerLink="/text-detection">
+        <span>Try Text Detection</span>
+        <span class="arrow">→</span>
+      </button>
     </div>
 
+    <!-- UPDATE 1: Image Detection Button Added Below -->
     <div class="card">
       <div class="card-icon">🖼️</div>
       <h3>Image Detection</h3>
       <p>Scan photos for digital manipulation, deepfake edits, and metadata tampering.</p>
+      <button class="btn-gradient-text" routerLink="/image-detection">
+        <span>Try Image Detection</span>
+        <span class="arrow">→</span>
+      </button>
     </div>
 
+    <!-- UPDATE 2: Video Detection Button Added Below -->
     <div class="card">
       <div class="card-icon">🎥</div>
       <h3>Video Detection</h3>
       <p>Evaluate video frames and audio channels to detect face swaps and synthetic clips.</p>
+      <button class="btn-gradient-text" routerLink="/video-detection">
+        <span>Try Video Detection</span>
+        <span class="arrow">→</span>
+      </button>
     </div>
 
+    <!-- UPDATE 3: Audio Detection Button Added Below -->
     <div class="card">
       <div class="card-icon">🎙️</div>
       <h3>Audio Detection</h3>
       <p>Identify voice cloning, synthetic speech, and spliced voice recordings.</p>
+      <button class="btn-gradient-text" routerLink="/audio-detection">
+        <span>Try Audio Detection</span>
+        <span class="arrow">→</span>
+      </button>
     </div>
 
+    <!-- UPDATE 4: URL Verification Button Added Below -->
     <div class="card">
       <div class="card-icon">🔗</div>
       <h3>URL Verification</h3>
       <p>Paste any live web link to assess domain reputation and article authenticity.</p>
+      <button class="btn-gradient-text" routerLink="/url-detection">
+        <span>Try URL Detection</span>
+        <span class="arrow">→</span>
+      </button>
     </div>
   </div>
 </section>
@@ -96,10 +120,5 @@
 <footer class="footer">
   <div class="footer-content">
     <p>© 2026 VeriTruth AI. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="https://github.com" target="_blank">GitHub</a>
-    </div>
   </div>
 </footer>

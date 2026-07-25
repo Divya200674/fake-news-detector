@@ -1,1 +1,74 @@
-<p>audio-detection works!</p>
+<div class="detection-layout">
+  <!-- Top Navigation Bar -->
+  <nav class="dash-navbar">
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">VeriTruth AI</span>
+    </div>
+    <div class="nav-actions">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/dashboard" class="nav-item">Dashboard</a>
+      <a routerLink="/history" class="nav-item">History</a>
+      <a routerLink="/profile" class="nav-item">Profile</a>
+      <button class="btn-logout" routerLink="/login">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dash-content">
+    <!-- Header -->
+    <header class="page-header">
+      <h2>🎙️ Audio Fake News Detection</h2>
+      <p>Upload an audio file to verify the authenticity of spoken news or voice recordings with AI.</p>
+    </header>
+
+    <div class="detection-card">
+      <!-- Upload Section -->
+      <div class="upload-zone">
+        <div class="upload-icon">🎧</div>
+        <h3>Choose Audio File or Drag & Drop</h3>
+        <p class="file-types">Supported formats: MP3, WAV, AAC</p>
+        <input type="file" id="audioInput" accept="audio/mp3, audio/wav, audio/aac" class="file-input" />
+        <label for="audioInput" class="btn btn-outline">Choose Audio File</label>
+      </div>
+
+      <!-- Audio Preview Section -->
+      <div class="audio-preview-container">
+        <div class="file-info">
+          <span class="file-name">🎵 speech_sample.mp3</span>
+          <span class="file-size">2.4 MB</span>
+        </div>
+        <audio controls class="audio-player">
+          <source src="" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+
+      <!-- Analyze Button -->
+      <button class="btn btn-primary btn-block btn-analyze">Analyze Audio</button>
+
+      <!-- Result Card -->
+      <div class="result-box result-fake">
+        <div class="result-header">
+          <div class="badge-group">
+            <span class="badge badge-fake">🔴 FAKE VOICE</span>
+            <span class="confidence">97% Confidence</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill fake-fill" style="width: 97%;"></div>
+        </div>
+
+        <div class="reason-section">
+          <h4>Reason / Key Analysis</h4>
+          <p>AI voice synthesis and spectral cloning artifacts detected. Pitch transitions exhibit synthetic manipulation.</p>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-outline">Analyze Another</button>
+          <a routerLink="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
