@@ -1,1 +1,66 @@
-<p>url-detection works!</p>
+<div class="detection-layout">
+  <!-- Top Navigation Bar -->
+  <nav class="dash-navbar">
+    <div class="logo">
+      <span class="logo-icon">🛡️</span>
+      <span class="logo-text">VeriTruth AI</span>
+    </div>
+    <div class="nav-actions">
+      <a routerLink="/" class="nav-item">Home</a>
+      <a routerLink="/dashboard" class="nav-item">Dashboard</a>
+      <a routerLink="/history" class="nav-item">History</a>
+      <a routerLink="/profile" class="nav-item">Profile</a>
+      <button class="btn-logout" routerLink="/login">Logout</button>
+    </div>
+  </nav>
+
+  <div class="dash-content">
+    <header class="page-header">
+      <h2>🔗 URL Fake News Detection</h2>
+      <p>Enter a news article link to verify the source, domain reputation, and article truthfulness.</p>
+    </header>
+
+    <div class="detection-card">
+      <div class="input-section">
+        <label for="urlInput" class="input-label">Enter News URL</label>
+        <input 
+          type="url" 
+          id="urlInput" 
+          class="url-input" 
+          placeholder="https://news.example.com/article" 
+          value="https://news.example.com/article"
+        />
+      </div>
+
+      <button class="btn btn-primary btn-block btn-analyze">Verify URL</button>
+
+      <!-- Result Card -->
+      <div class="result-box result-real">
+        <div class="result-header">
+          <div class="badge-group">
+            <span class="badge badge-real">✅ REAL NEWS</span>
+            <span class="confidence">98% Confidence</span>
+          </div>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress-fill real-fill" style="width: 98%;"></div>
+        </div>
+
+        <div class="meta-details">
+          <p><strong>Website:</strong> BBC News</p>
+        </div>
+
+        <div class="reason-section">
+          <h4>Reason / Key Analysis</h4>
+          <p>Trusted news source. Verified publisher domain with consistent journalistic credibility history.</p>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-outline">Verify Another URL</button>
+          <a routerLink="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

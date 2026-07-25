@@ -1,126 +1,69 @@
-<div class="dashboard-layout">
-  <!-- Top Navigation Bar -->
-  <nav class="dash-navbar">
+<div class="dash-container">
+  <!-- Navigation Header -->
+  <header class="dash-header">
     <div class="logo">
       <span class="logo-icon">🛡️</span>
       <span class="logo-text">VeriTruth AI</span>
     </div>
-    <div class="nav-actions">
-      <a routerLink="/" class="nav-item">Home</a>
-      <a routerLink="/history" class="nav-item">History</a>
-      <a routerLink="/profile" class="nav-item">Profile</a>
+    <nav class="dash-nav">
+      <a routerLink="/" class="nav-link">Home</a>
+      <a routerLink="/dashboard" class="nav-link active">Dashboard</a>
+      <a routerLink="/history" class="nav-link">History</a>
+      <a routerLink="/profile" class="nav-link">Profile</a>
       <button class="btn-logout" routerLink="/login">Logout</button>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="dash-main">
+    <div class="welcome-banner">
+      <h2>Welcome back, Divya! 👋</h2>
+      <p>Select a detection module below to start analyzing fake news content.</p>
     </div>
-  </nav>
 
-  <div class="dash-content">
-    <!-- Welcome Header -->
-    <header class="welcome-card">
-      <div class="welcome-text">
-        <h1>Welcome back, Divya 👋</h1>
-        <p>Ready to verify today's news? Choose a tool below to analyze content with AI.</p>
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+      <div class="card" routerLink="/text-detection">
+        <div class="card-icon">📝</div>
+        <h3>Text Detection</h3>
+        <p>Analyze news articles, statements, or claims for factual accuracy.</p>
+        <span class="card-link">Start Analysis &rarr;</span>
       </div>
-    </header>
 
-    <!-- Quick Statistics -->
-    <section class="stats-grid">
-      <div class="stat-card">
-        <span class="stat-label">Total Scans</span>
-        <span class="stat-value">120</span>
+      <div class="card" routerLink="/image-detection">
+        <div class="card-icon">🖼️</div>
+        <h3>Image Detection</h3>
+        <p>Detect deepfakes, manipulated images, and misleading photos.</p>
+        <span class="card-link">Start Analysis &rarr;</span>
       </div>
-      <div class="stat-card">
-        <span class="stat-label">Fake News Found</span>
-        <span class="stat-value fake">32</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">Real News Verified</span>
-        <span class="stat-value real">88</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-label">Model Accuracy</span>
-        <span class="stat-value">97.5%</span>
-      </div>
-    </section>
 
-    <!-- Choose Detection Type -->
-    <section class="section-container">
-      <h2>Choose Detection Type</h2>
-      <div class="detection-grid">
-        <div class="detection-card">
-          <div class="card-icon">📰</div>
-          <h3>Text Detection</h3>
-          <p>Analyze text articles, headlines, or paragraphs.</p>
-          <button class="btn-open" routerLink="/text-detection">Open Tool</button>
-        </div>
-
-        <div class="detection-card">
-          <div class="card-icon">🖼️</div>
-          <h3>Image Detection</h3>
-          <p>Verify uploaded photos for deepfakes or edits.</p>
-          <button class="btn-open" routerLink="/image-detection">Open Tool</button>
-        </div>
-
-        <div class="detection-card">
-          <div class="card-icon">🎥</div>
-          <h3>Video Detection</h3>
-          <p>Scan video frames for face swaps and edits.</p>
-          <button class="btn-open" routerLink="/video-detection">Open Tool</button>
-        </div>
-
-        <div class="detection-card">
-          <div class="card-icon">🎙️</div>
-          <h3>Audio Detection</h3>
-          <p>Detect voice cloning and synthetic speech.</p>
-          <button class="btn-open" routerLink="/audio-detection">Open Tool</button>
-        </div>
-
-        <div class="detection-card">
-          <div class="card-icon">🔗</div>
-          <h3>URL Detection</h3>
-          <p>Verify web links and domain credibility.</p>
-          <button class="btn-open" routerLink="/url-detection">Open Tool</button>
-        </div>
+      <div class="card" routerLink="/video-detection">
+        <div class="card-icon">🎥</div>
+        <h3>Video Detection</h3>
+        <p>Identify altered video content, face swaps, and deepfake clips.</p>
+        <span class="card-link">Start Analysis &rarr;</span>
       </div>
-    </section>
 
-    <!-- Recent Activity Table -->
-    <section class="section-container">
-      <div class="table-header">
-        <h2>Recent Activity</h2>
-        <a routerLink="/history" class="view-all">View All History →</a>
+      <div class="card" routerLink="/audio-detection">
+        <div class="card-icon">🎙️</div>
+        <h3>Audio Detection</h3>
+        <p>Detect voice cloning, synthesized speech, and edited audio clips.</p>
+        <span class="card-link">Start Analysis &rarr;</span>
       </div>
-      <div class="table-wrapper">
-        <table class="activity-table">
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Type</th>
-              <th>Result</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>2 min ago</td>
-              <td>URL</td>
-              <td><span class="badge badge-real">Real (99%)</span></td>
-              <td><a routerLink="/history" class="details-link">Details</a></td>
-            </tr>
-            <tr>
-              <td>5 min ago</td>
-              <td>Text</td>
-              <td><span class="badge badge-fake">Fake (94%)</span></td>
-              <td><a routerLink="/history" class="details-link">Details</a></td>
-            </tr>
-            <tr>
-              <td>Yesterday</td>
-              <td>Image</td>
-              <td><span class="badge badge-real">Real (96%)</span></td>
-              <td><a routerLink="/history" class="details-link">Details</a></td>
-            </tr>
-          </tbody>
-        </table>
+
+      <div class="card" routerLink="/url-detection">
+        <div class="card-icon">🔗</div>
+        <h3>URL Detection</h3>
+        <p>Check domain reputation and verify online news article sources.</p>
+        <span class="card-link">Start Analysis &rarr;</span>
       </div>
-    </section>
-  </div>
+
+      <div class="card" routerLink="/history">
+        <div class="card-icon">📜</div>
+        <h3>History</h3>
+        <p>View, filter, and review all your past fake news detection records.</p>
+        <span class="card-link">View History &rarr;</span>
+      </div>
+    </div>
+  </main>
 </div>

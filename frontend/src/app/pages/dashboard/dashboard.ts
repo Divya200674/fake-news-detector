@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink], // <--- Enables routerLink directive
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
