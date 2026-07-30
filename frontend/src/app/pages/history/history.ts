@@ -1,5 +1,5 @@
 import { Component, computed, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -16,7 +16,7 @@ interface HistoryItem {
 @Component({
   selector: 'app-history',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule],
+  imports: [RouterModule, CommonModule, FormsModule],
   templateUrl: './history.html',
   styleUrl: './history.css'
 })

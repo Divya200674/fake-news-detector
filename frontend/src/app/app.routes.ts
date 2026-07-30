@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 // Page Components
-import { Home } from './pages/home/home';
-import { Login } from './pages/login/login';
-import { Register } from './pages/register/register';
+
+import { LoginComponent } from './pages/login/login';
+import { RegisterComponent } from './pages/register/register.component';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { TextDetection } from './pages/text-detection/text-detection';
 import { ImageDetection } from './pages/image-detection/image-detection';
@@ -14,9 +14,9 @@ import { History } from './pages/history/history';
 import { Profile } from './pages/profile/profile';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-  { path: 'login', component: Login },
-  { path: 'register', component: Register },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: Dashboard },
   { path: 'text-detection', component: TextDetection },
   { path: 'image-detection', component: ImageDetection },

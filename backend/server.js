@@ -1,29 +1,28 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
+require('dotenv').config();
 
-dotenv.config();
-
-// Connect to MongoDB
-connectDB();
+const authRoutes = require('./routes/authroutes');
 
 const app = express();
 
-// Middleware
+// Enable CORS so Angular (http://localhost:4200) can communicate with backend
 app.use(cors());
+
+// Parse JSON request bodies
 app.use(express.json());
 
-// Auth Routes
-app.use('/api/auth', require('./routes/authRoutes'));
+// Routes
+app.use('/api/auth', authRoutes);
 
-// Root endpoint test
-app.get('/', (req, res) => {
-  res.send('VeriTruth AI Backend API is running...');
-});
-
+// Database Connection & Server Listen
 const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/fake-news-db';
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+mongoose.connect(MONGO_URI)
+  .then(() => {
+    console.log('MongoDB connected successfully');
+    app.listen(PORT, () => console.log(`Backend server running on http://localhost:${PORT}`));
+  })
+  .catch(err => console.error('MongoDB connection error:', err));
