@@ -4,14 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-register',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
-  templateUrl: './login.html',
-  styleUrls: ['./login.css']
+  templateUrl: './register.html',
+  styleUrls: ['./register.css']
 })
-export class Login {
-  credentials = {
+export class Register {
+  user = {
+    name: '',
     email: '',
     password: ''
   };
@@ -20,11 +21,11 @@ export class Login {
 
   constructor(private router: Router) {}
 
-  onLogin() {
-    if (this.credentials.email && this.credentials.password) {
-      this.router.navigate(['/dashboard']);
+  onRegister() {
+    if (this.user.name && this.user.email && this.user.password) {
+      this.router.navigate(['/login']);
     } else {
-      this.errorMessage = 'Please enter valid credentials.';
+      this.errorMessage = 'Please fill in all fields.';
     }
   }
 }

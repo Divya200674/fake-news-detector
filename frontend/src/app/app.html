@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<nav class="navbar">
+  <div class="logo">
+    <span class="shield-icon">🛡️</span>
+    <h2>VeriTruth AI</h2>
+  </div>
+
+  <div class="nav-links">
+    <a routerLink="/home" routerLinkActive="active">Home</a>
+    <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+    <a routerLink="/history" routerLinkActive="active">History</a>
+    <a routerLink="/profile" routerLinkActive="active">Profile</a>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

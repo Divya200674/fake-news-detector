@@ -2,88 +2,122 @@ const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// @desc    Register a new user
-// @route   POST /api/auth/register
-// @access  Public
-const registerUser = async (req, res) => {
+
+// ================= Register =================
+
+exports.register = async (req, res) => {
   try {
+
+    console.log(req.body);
+
     const { name, email, password } = req.body;
 
-    // 1. Check required fields
     if (!name || !email || !password) {
-      return res.status(400).json({ message: 'Please provide all required fields' });
+      return res.status(400).json({
+        message: 'Please provide name, email and password.'
+      });
     }
 
-    // 2. Check if user already exists
-    const userExists = await User.findOne({ email });
-    if (userExists) {
-      return res.status(400).json({ message: 'User already exists with this email' });
+    const existingUser = await User.findOne({ email });
+
+    if (existingUser) {
+      return res.status(400).json({
+        message: 'User already exists.'
+      });
     }
 
-    // 3. Hash password
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
-    // 4. Create user
-    const user = await User.create({
+    const newUser = await User.create({
       name,
       email,
-      password: hashedPassword,
+      password: hashedPassword
     });
 
-    if (user) {
-      res.status(201).json({
-        message: 'User Registered',
-        user: {
-          _id: user._id,
-          name: user.name,
-          email: user.email,
-        },
-      });
-    } else {
-      res.status(400).json({ message: 'Invalid user data' });
-    }
-  } catch (error) {
-    res.status(500).json({ message: error.message });
+    res.status(201).json({
+      success: true,
+      message: 'User Registered Successfully',
+      user: {
+        id: newUser._id,
+        name: newUser.name,
+        email: newUser.email
+      }
+    });
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      message: err.message
+    });
+
   }
 };
 
-// @desc    Authenticate user & get token
-// @route   POST /api/auth/login
-// @access  Public
-const loginUser = async (req, res) => {
+
+// ================= Login =================
+
+exports.login = async (req, res) => {
+
   try {
+
     const { email, password } = req.body;
 
-    // 1. Check for user email
+    if (!email || !password) {
+      return res.status(400).json({
+        message: 'Please provide email and password.'
+      });
+    }
+
     const user = await User.findOne({ email });
 
-    // 2. Check password match
-    if (user && (await bcrypt.compare(password, user.password))) {
-      // 3. Generate JWT Token
-      const token = jwt.sign(
-        { id: user._id },
-        process.env.JWT_SECRET || 'fallback_secret',
-        { expiresIn: '30d' }
-      );
-
-      res.json({
-        token,
-        user: {
-          _id: user._id,
-          name: user.name,
-          email: user.email,
-        },
+    if (!user) {
+      return res.status(400).json({
+        message: 'Invalid Credentials'
       });
-    } else {
-      res.status(401).json({ message: 'Invalid email or password' });
     }
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
 
-module.exports = {
-  registerUser,
-  loginUser,
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(400).json({
+        message: 'Invalid Credentials'
+      });
+    }
+
+    const token = jwt.sign(
+      {
+        id: user._id,
+        name: user.name,
+        email: user.email
+      },
+      process.env.JWT_SECRET || "veritruth_secret",
+      {
+        expiresIn: "1d"
+      }
+    );
+
+    res.status(200).json({
+      success: true,
+      message: "Login Successful",
+      token,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email
+      }
+    });
+
+  } catch (err) {
+
+    console.error(err);
+
+    res.status(500).json({
+      message: err.message
+    });
+
+  }
+
 };
